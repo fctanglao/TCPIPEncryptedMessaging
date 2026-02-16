@@ -11,7 +11,7 @@
 
 ## Generating Client Public and Private Keys
 - ### openssl genrsa -out client_private.pem 2048
-- ### openssl rsa -in c;ient_private.pem -pubout -out client_public.pem
+- ### openssl rsa -in client_private.pem -pubout -out client_public.pem
 
 ## Sharing Server Public Key
 - ### scp user@server_ip: /path/to/public.pem /path/to/client/code/directory/
