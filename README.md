@@ -35,12 +35,14 @@ The **client** gives the server: `client_public.pem` (client public key used by 
 - openssl genrsa -out client_private.pem 2048
 - openssl rsa -in client_private.pem -pubout -out client_public.pem
 
-## Sharing Public Keys
+## Share Public Keys
 ### Server
 - scp user@server_ip: /path/to/public.pem /path/to/client/code/directory/
 
 ## Client
 - scp client_public.pem user@server_ip: /path/to/server/code/directory/
+
+> Private keys are never shared. Only public keys are exchanged.
 
 ## Compiling and Running the Server
 - ### gcc server.c -o server -lcrypto -lssl
