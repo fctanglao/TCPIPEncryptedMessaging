@@ -44,6 +44,8 @@ The **client** gives the server: `client_public.pem` (client public key used by 
 
 > Note: Private keys are never shared. Only public keys are exchanged
 
+This project assumes keys are shared out-of-band (e.g., USB, SCP, email, shared folder, etc.). No certificate authority (CA) or TLS validation is used
+
 ## Compiling and Running the Server
 - ### gcc server.c -o server -lcrypto -lssl
 - ### ./server
