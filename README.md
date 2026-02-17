@@ -7,11 +7,11 @@ I wrote this program for a final assignment in my Introduction to Cybersecurity 
 The application establishes a TCP connection on port 8080
 
 ### Key Loading
-**Server loads:**
+**Server Loads:**
 - `private.pem` (server private key)
 - `client_public.pem` (client public key)
 
-**Client loads:**
+**Client Loads:**
 - `client_private.pem` (client private key)
 - `public.pem` (server public key)
 
