@@ -27,11 +27,11 @@ The **client** gives the server: `client_public.pem` (client public key used by 
 - Typing `disconnect` closes the session
 
 ## Generate RSA Keys
-### Server Keys 
+### Server
 - openssl genrsa -out private.pem 2048
 - openssl rsa -in private.pem -pubout -out public.pem
 
-### Client Keys
+### Client
 - openssl genrsa -out client_private.pem 2048
 - openssl rsa -in client_private.pem -pubout -out client_public.pem
 
@@ -39,10 +39,10 @@ The **client** gives the server: `client_public.pem` (client public key used by 
 ### Server
 - scp user@server_ip: /path/to/public.pem /path/to/client/code/directory/
 
-## Client
+### Client
 - scp client_public.pem user@server_ip: /path/to/server/code/directory/
 
-> Private keys are never shared. Only public keys are exchanged.
+> Note: Private keys are never shared. Only public keys are exchanged
 
 ## Compiling and Running the Server
 - ### gcc server.c -o server -lcrypto -lssl
