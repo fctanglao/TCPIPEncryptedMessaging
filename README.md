@@ -42,9 +42,7 @@ The **client** gives the server: `client_public.pem` (client public key used by 
 ### Client
 - scp client_public.pem user@server_ip: /path/to/server/code/directory/
 
-> Note: Private keys are never shared. Only public keys are exchanged
-
-This project assumes keys are shared out-of-band (e.g., USB, SCP, email, shared folder, etc.). No certificate authority (CA) or TLS validation is used
+> Note: This project assumes keys are shared out-of-band. No certificate authority (CA) or TLS validation is used
 
 ## Compiling and Running the Server
 - ### gcc server.c -o server -lcrypto -lssl
