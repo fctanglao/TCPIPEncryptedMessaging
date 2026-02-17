@@ -24,22 +24,22 @@ The **client** gives the server: `client_public.pem` (client public key used by 
 
 ## Generate RSA Keys
 ### Server (Run On Server Machine)
-- openssl genrsa -out private.pem 2048
-- openssl rsa -in private.pem -pubout -out public.pem
+- `openssl genrsa -out private.pem 2048`
+- `openssl rsa -in private.pem -pubout -out public.pem`
 ### Client (Run On Client Machine)
-- openssl genrsa -out client_private.pem 2048
-- openssl rsa -in client_private.pem -pubout -out client_public.pem
+- `openssl genrsa -out client_private.pem 2048`
+- `openssl rsa -in client_private.pem -pubout -out client_public.pem`
 
 ## Share the Public Keys
 ### Server -> Client
-- scp user@server_ip:/path/to/public.pem /path/to/client/code/directory/
+- `scp user@server_ip:/path/to/public.pem /path/to/client/code/directory/`
 ### Client -> Server
-- scp client_public.pem username@server_ip:/path/to/server/code/directory/
+- `scp client_public.pem username@server_ip:/path/to/server/code/directory/`
 
 ## Compiling and Running the Server
-- ### gcc server.c -o server -lcrypto -lssl
-- ### ./server
+- `gcc server.c -o server -lcrypto -lssl`
+- `./server`
 
 ## Compiling and Running the Client
-- ### gcc client.c -o client -lcrypto -lssl
-- ### ./client
+- `gcc client.c -o client -lcrypto -lssl`
+- `./client`
