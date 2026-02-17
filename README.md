@@ -16,7 +16,9 @@ The application establishes a TCP connection on port `8080` and encrypts message
 
 ### Public Key Sharing
 Before the encrypted chat can work, the public keys must be shared
+
 The **server** gives the client: `public.pem` (server public key used by the client to encrypt messages to the server)
+
 The **client** gives the server: `client_public.pem` (client public key used by the server to encrypt replies to the client)
 
 ### Message Flow
