@@ -1,16 +1,19 @@
 # TCP/IP Encrypted Messaging
 
 ## Project Motivation
-- ### I wrote this program for a final assignment in my Introduction to Cybersecurity class at Cal Poly Pomona
-- ### I wanted to apply what we learned about encryption and TCP/IP communication in a practical setting
-- ### Instead of studying RSA and socket communication separately, the goal was to integrate both into a working client–server system
-- ### By implementing encrypted messaging over raw TCP sockets, this project demonstrates how public-key cryptography secures network communication and highlights the difference between transport reliability (TCP) and confidentiality (encryption)
+I wrote this program for a final assignment in my Introduction to Cybersecurity class at Cal Poly Pomona. I wanted to apply what we learned about encryption and TCP/IP communication in a practical setting. Instead of studying RSA and socket communication separately, the goal was to integrate both into a working client–server system. By implementing encrypted messaging over raw TCP sockets, this project demonstrates how public-key cryptography secures network communication and highlights the difference between transport reliability (TCP) and confidentiality (encryption)
 
 ## How It Works
-- ### The application establishes a TCP connection on port **8080**
+The application establishes a TCP connection on port 8080
+
 ### Key Loading
+**Server loads:**
+- `private.pem` (server private key)
+- `client_public.pem` (client public key)
 
-
+**Client loads:**
+- `client_private.pem` (client private key)
+- `public.pem` (server public key)
 
 
 
