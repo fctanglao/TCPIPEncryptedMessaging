@@ -18,14 +18,16 @@ The application establishes a TCP connection on port 8080
 ### Message Flow
 - Encrypt with server public key -> Decrypt with server private key
 - Decrypt with client private key <- Encrypt with client public key
+- Typing `disconnect` closes the session
 
-## Generating Server Public and Private Keys
-- ### openssl genrsa -out private.pem 2048
-- ### openssl rsa -in private.pem -pubout -out public.pem
+## Generate RSA Keys
+### Server Keys
+- openssl genrsa -out private.pem 2048
+- openssl rsa -in private.pem -pubout -out public.pem
 
-## Generating Client Public and Private Keys
-- ### openssl genrsa -out client_private.pem 2048
-- ### openssl rsa -in client_private.pem -pubout -out client_public.pem
+### Client Keys
+- openssl genrsa -out client_private.pem 2048
+- openssl rsa -in client_private.pem -pubout -out client_public.pem
 
 ## Sharing Server Public Key
 - ### scp user@server_ip: /path/to/public.pem /path/to/client/code/directory/
