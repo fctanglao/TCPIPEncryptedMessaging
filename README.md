@@ -2,8 +2,9 @@
 
 ## Project Motivation
 - ### I wrote this program for a final assignment in my Introduction to Cybersecurity class at Cal Poly Pomona
-- ### I wanted to apply what we learned about encryption and TCP/IP communication into something tangible
-- ### My goal is to elevate this program into an embedded application allowing people to communicate between different devices and networks
+- ### I wanted to apply what we learned about encryption and TCP/IP communication in a practical setting
+- ### Instead of studying RSA and socket communication separately, the goal was to integrate both into a working client–server system
+- ### By implementing encrypted messaging over raw TCP sockets, this project demonstrates how public-key cryptography secures network communication and highlights the difference between transport reliability (TCP) and confidentiality (encryption)
 
 ## Generating Server Public and Private Keys
 - ### openssl genrsa -out private.pem 2048
