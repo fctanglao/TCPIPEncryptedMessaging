@@ -5,7 +5,6 @@ I wrote this program for a final assignment in my Introduction to Cybersecurity 
 
 ## How It Works
 The application establishes a TCP connection on port 8080
-
 ### Key Loading
 **Server Loads:**
 - `private.pem` (server private key)
