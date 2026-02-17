@@ -16,9 +16,8 @@ The application establishes a TCP connection on port 8080
 - `public.pem` (server public key)
 
 ### Message Flow
-Encrypt with server public key -> Decrypt with server private key
-
-Decrypt with client private key <- Encrypt with client public key
+- Encrypt with server public key -> Decrypt with server private key
+- Decrypt with client private key <- Encrypt with client public key
 
 ## Generating Server Public and Private Keys
 - ### openssl genrsa -out private.pem 2048
