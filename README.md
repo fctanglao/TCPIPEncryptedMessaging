@@ -32,12 +32,9 @@ The **client** gives the server: `client_public.pem` (client public key used by 
 
 ## Share the Public Keys
 ### Server -> Client
-- scp user@server_ip: /path/to/public.pem /path/to/client/code/directory/
-
+- scp user@server_ip:/path/to/public.pem /path/to/client/code/directory/
 ### Client -> Server
-- scp client_public.pem username@server_ip: /path/to/server/code/directory/
-
-
+- scp client_public.pem username@server_ip:/path/to/server/code/directory/
 
 ## Compiling and Running the Server
 - ### gcc server.c -o server -lcrypto -lssl
