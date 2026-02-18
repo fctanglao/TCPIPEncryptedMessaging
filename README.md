@@ -29,7 +29,7 @@ sudo apt install libssl-dev
 ### Generating Server Key Pair
 - `openssl` invokes the OpenSSL tool, which provides various cryptographic operations
 - `genrsa:` specifies that you want to generate an RSA key pair
-- `out private.pem` indicates the name of the output file where the private key will be saved in PEM (Privacy-Enhanced Mail) format
+- `out private.pem` indicates the name of the output file (in this case we we went with "private") where the private key will be saved in PEM (Privacy-Enhanced Mail) format
 - `2048` specifies the key size (2048 bits)
 > Note: A larger key size provides stronger encryption but is slower
 
