@@ -38,7 +38,7 @@ openssl genrsa -out private.pem 2048
 - `rsa` specifies that you want to work with an RSA key
 - `in private.pem` specifies the input file containing the private key
 - `pubout` indicates that you want to output the corresponding public key
-- `out public.pem` specifies the name of the output file where the public key will be saved in PEM format
+- `out public.pem` specifies the name of the output file
 ```bash
 openssl rsa -in private.pem -pubout -out public.pem
 ```
