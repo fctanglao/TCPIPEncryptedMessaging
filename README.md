@@ -77,8 +77,22 @@ inet_pton(AF_INET, "192.168.119.128", &serv_addr.sin_addr)
 ## Packet Analysis Using Wireshark
 - Wireshark was used to verify that transmitted messages are encrypted
 ### Filter Used
-```bash
+```ini
 tcp.port == 8080
 ```
+### Wireshark Capture & Observations
 ![Wireshark Capture](https://github.com/fctanglao/TCPIPEncryptedMessaging/blob/main/Wireshark%20Capture.png)
+- Packet 1: A SYN (synchronize) packet sent by the client (192.168.119.129) to initiate the connection
+- Packet 2: The server (192.168.119.128) responds with a SYN-ACK (synchronize-acknowledge) packet to accept the connection
+- Packet 3: The client completes the handshake by sending an ACK (acknowledge)
+- Packet 8:
+  - Source: 192.168.119.129 (client)
+  - Destination: 192.168.119.128 (server)
+  - Length: 256 bytes of payload sent from the client
+  - Info: A PSH, ACK flag is present, indicating that the client is pushing data to the server, and the data must be immediately processed.
+  - The hexadecimal content in the bottom pane shows the encrypted data being transmitted.
+<img width="1416" height="203" alt="image" src="https://github.com/user-attachments/assets/1fbd174b-c9b2-41a2-b1dd-ad6e98c01fcb" />
 
+- Encrypted packets marked [PSH, ACK]
+- Payload appears random in hex view
+- No readable plaintext visible
