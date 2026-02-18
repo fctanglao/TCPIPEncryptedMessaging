@@ -52,6 +52,8 @@ openssl rsa -in client_private.pem -pubout -out client_public.pem
 ## Share Public Keys
 - Before the encrypted chat can work, the public keys must be shared
 - The public keys were distributed separately from the messaging application via SCP prior to communication
+- SCP securely transfers the public key file from the sender to the recipient using SSH
+- SSH establishes an encrypted and authenticated channel before the file is transmitted, ensuring confidentiality and integrity during transfer
 > Note: Private keys are never shared. Only public keys are exchanged
 ### Sharing Server Public Key
 ```bash
