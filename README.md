@@ -12,6 +12,16 @@ I wrote this program for a final assignment in my Introduction to Cybersecurity 
 - Server -> Encrypt with client public key -> Send over TCP -> Client -> Decrypt with client private key  
 > Note: Typing **disconnect** closes the session
 
+## Requirements
+- Linux or macOS
+- GCC
+- OpenSSL Development Libraries
+### Ubuntu/Debian
+```bash
+sudo apt update
+sudo apt install libssl-dev
+```
+
 ## Generate Key Pairs
 - Each side generates its own 2048-bit RSA key pair
 ### Generating Server Key Pair
@@ -37,16 +47,6 @@ scp user@server-ip:/path/to/public.pem /path/to/client/code/directory/
 ### Sharing Client Public Key
 ```bash
 scp client_public.pem username@server_ip:/path/to/destination/directory/
-```
-
-## Requirements
-- Linux or macOS
-- GCC
-- OpenSSL Development Libraries
-### Ubuntu/Debian
-```bash
-sudo apt update
-sudo apt install libssl-dev
 ```
 
 ## Build the Executables
