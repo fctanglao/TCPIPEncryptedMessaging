@@ -18,7 +18,7 @@ I wrote this program for a final assignment in my Introduction to Cybersecurity 
 - OpenSSL Development Libraries
 ### Ubuntu/Debian
 - `sudo apt update` refreshes the system’s package index to ensure the latest versions are available
-- `sudo apt install libssl-dev` installs the OpenSSL development package, which provides the header files and libraries (`libssl` and `libcrypto`) required to compile programs that use OpenSSL
+- `sudo apt install libssl-dev` installs the OpenSSL development package, which provides the header files and libraries (`libssl` and `lcrypto`) required to compile programs that use OpenSSL
 ```bash
 sudo apt update
 sudo apt install libssl-dev
