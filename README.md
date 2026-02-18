@@ -29,6 +29,7 @@ openssl rsa -in client_private.pem -pubout -out client_public.pem
 ## Public Key Sharing
 - Before the encrypted chat can work, the public keys must be shared
 - The public keys were distributed separately from the messaging application via SCP prior to communication
+- > Note: Private keys are never shared. Only public keys are exchanged
 ### Sharing Server Public Key
 ```bash
 scp user@server-ip:/path/to/public.pem /path/to/client/code/directory/
@@ -37,7 +38,6 @@ scp user@server-ip:/path/to/public.pem /path/to/client/code/directory/
 ```bash
 scp client_public.pem username@server_ip:/path/to/destination/directory/
 ```
-> Note: Private keys are never shared. Only public keys are exchanged
 
 ## Requirements
 - Linux or macOS
