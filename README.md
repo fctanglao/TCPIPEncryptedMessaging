@@ -9,7 +9,7 @@ I wrote this program for a final assignment in my Introduction to Cybersecurity 
 ### Message Flow
 - Client -> Encrypt with server public key -> Send over TCP -> Server -> Decrypt with server private key  
 - Server -> Encrypt with client public key -> Send over TCP -> Client -> Decrypt with client private key  
-> Note: Typing `disconnect` closes the session
+> Note: Typing **disconnect** closes the session
 
 ## Key Generation & Public Key Sharing
 - Each side generates its own 2048-bit RSA key pair
