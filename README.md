@@ -6,10 +6,10 @@ I wrote this program for a final assignment in my Introduction to Cybersecurity 
 ## How It Works
 The application establishes a TCP connection on port `8080` and encrypts messages at the application layer
 ### Key Pairs
-#### Server:
+#### **Server:**
 - `private.pem` (server private key)
 - `public.pem` (server public key)
-#### Client:
+#### **Client:**
 - `client_private.pem` (client private key)
 - `client_public.pem` (client public key)
 ### Public Key Sharing
