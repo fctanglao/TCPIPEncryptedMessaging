@@ -6,7 +6,7 @@ I wrote this program for a final assignment in my Introduction to Cybersecurity 
 ## Overview
 - The application establishes a TCP connection on port `8080` and encrypts messages at the application layer using RSA with OAEP padding
 - Each side generates its own RSA key pair and shares only its **public key** with the other party before communication begins
-- Public keys are shared so that a sender can encrypt messages using the recipient’s public key, ensuring that only the recipient (who possesses the corresponding private key) can decrypt and read the message
+- Public keys are shared so that a sender can encrypt messages using the recipient’s public key, ensuring that only the recipient (who possesses the corresponding **private key**) can decrypt and read the message
 ### Message Flow
 - Client -> Encrypt with server public key -> Send over TCP -> Server -> Decrypt with server private key  
 - Server -> Encrypt with client public key -> Send over TCP -> Client -> Decrypt with client private key  
@@ -90,7 +90,7 @@ tcp.port == 8080
   - Destination: 192.168.119.128 (server)
   - Length: 256 bytes of payload sent from the client
   - Info: A PSH, ACK flag is present, indicating that the client is pushing data to the server, and the data must be immediately processed.
-  - The hexadecimal content in the bottom pane shows the encrypted data being transmitted.
+  > Note: The hexadecimal content in the bottom pane shows the encrypted data being transmitted.
 - Packets 9–22: These are ACK packets confirming the receipt of data between the client and server. This is part of TCP's reliable delivery mechanism
 - Packet 21: The client sends a FIN (finish) packet to signal the end of the connection
 - Packet 22: The server responds with an ACK, acknowledging the client's termination request
