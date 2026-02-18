@@ -3,10 +3,16 @@
 ## Project Motivation
 I wrote this program for a final assignment in my Introduction to Cybersecurity class at Cal Poly Pomona. I wanted to apply what we learned about encryption and TCP/IP communication in a practical setting. Instead of studying RSA and socket communication separately, the goal was to integrate both into a working client–server system. By implementing encrypted messaging over raw TCP sockets, this project demonstrates how public-key cryptography secures network communication and highlights the difference between transport reliability (TCP) and confidentiality (encryption)
 
-## How It Works
-The application establishes a TCP connection on port `8080` and encrypts messages at the application layer
+## Overview
+- The application establishes a TCP connection on port `8080` and encrypts messages at the application layer using RSA with OAEP padding
+- Each side generates its own RSA key pair and shares only its **public key** with the other party before communication begins
+### Message Flow
+- Client -> Encrypt with server public key -> Send over TCP -> Server -> Decrypt with server private key  
+- Server -> Encrypt with client public key -> Send over TCP -> Client -> Decrypt with client private key  
+
+> Note: Typing `disconnect` closes the session
 ### Key Pairs
-- Each side generates its own RSA key pair
+- Each side generates its own 2048-bit RSA key pair
 - **Server:** `private.pem` (server private key) & `public.pem` (server public key)
 - **Client:** `client_private.pem` (client private key) & `client_public.pem` (client public key)
 ### Public Key Sharing
@@ -15,10 +21,7 @@ The application establishes a TCP connection on port `8080` and encrypts message
 - The **client** gives the server `client_public.pem` (client public key used by the server to encrypt replies to the client)
 > Note: Private keys are never shared. Only public keys are exchanged
 - This project assumes keys are shared out-of-band. No certificate authority (CA) or TLS validation is used
-### Message Flow
-- Encrypt with server public key -> Decrypt with server private key
-- Decrypt with client private key <- Encrypt with client public key
-> Note: Typing `disconnect` closes the session
+
 
 ## Generate RSA Keys
 ### Server (Run On Server Machine)
