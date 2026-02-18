@@ -12,22 +12,33 @@ I wrote this program for a final assignment in my Introduction to Cybersecurity 
 > Note: Typing `disconnect` closes the session
 
 ## Key Generation & Public Key Sharing
-### Generating Keys
 - Each side generates its own 2048-bit RSA key pair
-- **Server:** `private.pem` (server private key) & `public.pem` (server public key)
-- **Client:** `client_private.pem` (client private key) & `client_public.pem` (client public key)
+### Generating Server Key Pair
+```bash
+openssl genrsa -out private.pem 2048
+openssl rsa -in private.pem -pubout -out public.pem
+```
+> Note: `private.pem` (server private key) & `public.pem` (server public key)
+### Generating Client Key Pair
+```bash
+openssl genrsa -out client_private.pem 2048
+openssl rsa -in client_private.pem -pubout -out client_public.pem
+```
+> Note: `client_private.pem` (client private key) & `client_public.pem` (client public key)
 ### Sharing Public Keys
 - Before the encrypted chat can work, the public keys must be shared
+- The public keys were distributed separately from the messaging application via SCP prior to communication
 - The **server** gives the client `public.pem` (server public key used by the client to encrypt messages to the server)
+```bash
+scp user@server-ip:/path/to/public.pem /path/to/client/code/directory/
+```
 - The **client** gives the server `client_public.pem` (client public key used by the server to encrypt replies to the client)
+```bash
+scp client_public.pem username@server_ip:/path/to/destination/directory/
+```
 > Note: Private keys are never shared. Only public keys are exchanged
-- This project assumes keys are shared out-of-band. No certificate authority (CA) or TLS validation is used
 
-### Server (run on server machine)
-````bash
-openssl genpkey -algorithm RSA -pkeyopt rsa_keygen_bits:2048 -out private.pem
-openssl rsa -pubout -in private.pem -out public.pem
-````
+
 
 
 ## Generate RSA Keys
