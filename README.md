@@ -6,17 +6,15 @@ I wrote this program for a final assignment in my Introduction to Cybersecurity 
 ## How It Works
 The application establishes a TCP connection on port `8080` and encrypts messages at the application layer
 ### Key Pairs
-#### Server:
-- `private.pem` (server private key)
-- `public.pem` (server public key)
-#### Client:
-- `client_private.pem` (client private key)
-- `client_public.pem` (client public key)
+- Each side generates its own RSA key pair
+- **Server:** `private.pem` (server private key) & `public.pem` (server public key)
+- **Client:** `client_private.pem` (client private key) & `client_public.pem` (client public key)
 ### Public Key Sharing
 - Before the encrypted chat can work, the public keys must be shared
 - The **server** gives the client `public.pem` (server public key used by the client to encrypt messages to the server)
 - The **client** gives the server `client_public.pem` (client public key used by the server to encrypt replies to the client)
-> Note: This project assumes keys are shared out-of-band. No certificate authority (CA) or TLS validation is used
+> Note: Private keys are never shared. Only public keys are exchanged
+- This project assumes keys are shared out-of-band. No certificate authority (CA) or TLS validation is used
 ### Message Flow
 - Encrypt with server public key -> Decrypt with server private key
 - Decrypt with client private key <- Encrypt with client public key
