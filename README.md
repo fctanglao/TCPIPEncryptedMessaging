@@ -43,17 +43,14 @@ scp client_public.pem username@server_ip:/path/to/destination/directory/
 - Linux or macOS
 - GCC
 - OpenSSL Development Libraries
-### Ubuntu
+### Ubuntu/Debian
 ```bash
 sudo apt update
 sudo apt install libssl-dev
 ```
 
 ## Build
-## Compiling and Running the Server
+### Compiling Server
 - `gcc server.c -o server -lcrypto -lssl`
-- `./server`
-
-## Compiling and Running the Client
+### Compiling Client
 - `gcc client.c -o client -lcrypto -lssl`
-- `./client`
