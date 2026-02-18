@@ -95,6 +95,7 @@ inet_pton(AF_INET, "192.168.119.128", &serv_addr.sin_addr)
 - Wireshark was used to verify that transmitted messages are encrypted
 - Wireshark is a network protocol analyzer that captures and inspects packets transmitted over a network
 ### Update Display Filter
+- Filters Wireshark traffic to only show packets where the TCP source or destination port is `8080`
 ```ini
 tcp.port == 8080
 ```
