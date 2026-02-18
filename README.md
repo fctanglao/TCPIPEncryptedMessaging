@@ -9,18 +9,25 @@ I wrote this program for a final assignment in my Introduction to Cybersecurity 
 ### Message Flow
 - Client -> Encrypt with server public key -> Send over TCP -> Server -> Decrypt with server private key  
 - Server -> Encrypt with client public key -> Send over TCP -> Client -> Decrypt with client private key  
-
 > Note: Typing `disconnect` closes the session
-### Key Pairs
+
+## Key Generation & Public Key Sharing
+### Generating Keys
 - Each side generates its own 2048-bit RSA key pair
 - **Server:** `private.pem` (server private key) & `public.pem` (server public key)
 - **Client:** `client_private.pem` (client private key) & `client_public.pem` (client public key)
-### Public Key Sharing
+### Sharing Public Keys
 - Before the encrypted chat can work, the public keys must be shared
 - The **server** gives the client `public.pem` (server public key used by the client to encrypt messages to the server)
 - The **client** gives the server `client_public.pem` (client public key used by the server to encrypt replies to the client)
 > Note: Private keys are never shared. Only public keys are exchanged
 - This project assumes keys are shared out-of-band. No certificate authority (CA) or TLS validation is used
+
+### Server (run on server machine)
+```bash
+openssl genpkey -algorithm RSA -pkeyopt rsa_keygen_bits:2048 -out private.pem
+openssl rsa -pubout -in private.pem -out public.pem
+```
 
 
 ## Generate RSA Keys
