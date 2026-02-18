@@ -75,7 +75,7 @@ inet_pton(AF_INET, "192.168.119.128", &serv_addr.sin_addr)
 ```
 
 ## Packet Analysis Using Wireshark
-- Wireshark was used to verify that the transmitted messages were encrypted
+- Wireshark was used to verify that transmitted messages are encrypted
 ### Filter Used
 ```ini
 tcp.port == 8080
