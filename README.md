@@ -89,8 +89,8 @@ tcp.port == 8080
   - Source: 192.168.119.129 (client)
   - Destination: 192.168.119.128 (server)
   - Length: 256 bytes of payload sent from the client
-  - Info: A PSH, ACK flag is present, indicating that the client is pushing data to the server, and the data must be immediately processed.
-  > Note: The hexadecimal content in the **bottom pane** shows the encrypted data being transmitted.
+  - Info: A PSH, ACK flag is present, indicating that the client is pushing data to the server, and the data must be immediately processed
+  > Note: The hexadecimal content in the **bottom pane** shows the encrypted data being transmitted
 - Packets 9–22: These are ACK packets confirming the receipt of data between the client and server. This is part of TCP's reliable delivery mechanism
 - Packet 21: The client sends a FIN (finish) packet to signal the end of the connection
 - Packet 22: The server responds with an ACK, acknowledging the client's termination request
