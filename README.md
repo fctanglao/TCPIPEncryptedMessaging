@@ -20,7 +20,7 @@ The application establishes a TCP connection on port `8080` and encrypts message
 ### Message Flow
 - Encrypt with server public key -> Decrypt with server private key
 - Decrypt with client private key <- Encrypt with client public key
-- Typing `disconnect` closes the session
+> Note: Typing `disconnect` closes the session
 
 ## Generate RSA Keys
 ### Server (Run On Server Machine)
