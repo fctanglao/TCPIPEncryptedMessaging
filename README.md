@@ -66,6 +66,8 @@ scp client_public.pem username@server_ip:/path/to/destination/directory/
 
 ## Build the Executables
 ### Building the Server
+- `–lssl` links against the libssl library, providing functionality for implementing SSL/TLS protocols
+- `-lcrypto` links against the libcrypto library, providing cryptographic primitives and utilities
 ```bash
 gcc server.c -o server -lcrypto -lssl
 ```
