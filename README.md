@@ -38,23 +38,17 @@ scp client_public.pem username@server_ip:/path/to/destination/directory/
 ```
 > Note: Private keys are never shared. Only public keys are exchanged
 
+## Requirements
+- Linux or macOS
+- GCC
+- OpenSSL Development Libraries
+### Ubuntu
+```bash
+sudo apt update
+sudo apt install libssl-dev
+```
 
-
-
-## Generate RSA Keys
-### Server (Run On Server Machine)
-- `openssl genrsa -out private.pem 2048`
-- `openssl rsa -in private.pem -pubout -out public.pem`
-### Client (Run On Client Machine)
-- `openssl genrsa -out client_private.pem 2048`
-- `openssl rsa -in client_private.pem -pubout -out client_public.pem`
-
-## Share the Public Keys
-### Server -> Client
-- `scp user@server_ip:/path/to/public.pem /path/to/client/code/directory/`
-### Client -> Server
-- `scp client_public.pem username@server_ip:/path/to/server/code/directory/`
-
+## Build
 ## Compiling and Running the Server
 - `gcc server.c -o server -lcrypto -lssl`
 - `./server`
