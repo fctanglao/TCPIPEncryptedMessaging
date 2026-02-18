@@ -65,7 +65,7 @@ gcc client.c -o client -lcrypto -lssl
 ./server
 ```
 ### Configure Client IP
-- In `client.c`, update the current IP address with your server's LAN IP (line 61)
+- In `client.c`, update the current IP address with your server's LAN IP
 ```bash
 inet_pton(AF_INET, "192.168.119.128", &serv_addr.sin_addr)
 ```
