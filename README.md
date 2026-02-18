@@ -32,9 +32,14 @@ sudo apt install libssl-dev
 - `out private.pem` indicates the name of the output file where the private key will be saved in PEM (Privacy-Enhanced Mail) format
 - `2048` specifies the key size (2048 bits)
 > Note: A larger key size provides stronger encryption but is slower
-
 ```bash
 openssl genrsa -out private.pem 2048
+```
+- `rsa` specifies that you want to work with an RSA key
+- `in private.pem` specifies the input file containing the private key
+- `pubout` indicates that you want to output the corresponding public key
+- `out public.pem` specifies the name of the output file where the public key will be saved in PEM format
+```bash
 openssl rsa -in private.pem -pubout -out public.pem
 ```
 > Note: `private.pem` (server private key) & `public.pem` (server public key)
