@@ -76,5 +76,5 @@ inet_pton(AF_INET, "192.168.119.128", &serv_addr.sin_addr)
 
 ## Packet Analysis Using Wireshark
 - Wireshark was used to verify that transmitted messages are encrypted
-- ![Wireshark Capture](docs/wireshark_capture.png)
+- ![Wireshark Capture](https://github.com/fctanglao/TCPIPEncryptedMessaging/blob/main/Wireshark%20Capture.png)
 
