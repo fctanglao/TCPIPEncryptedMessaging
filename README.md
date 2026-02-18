@@ -12,7 +12,7 @@ I wrote this program for a final assignment in my Introduction to Cybersecurity 
 - Server -> Encrypt with client public key -> Send over TCP -> Client -> Decrypt with client private key  
 > Note: Typing **disconnect** closes the session
 
-## Key Generation
+## Generate Key Pairs
 - Each side generates its own 2048-bit RSA key pair
 ### Generating Server Key Pair
 ```bash
@@ -26,7 +26,7 @@ openssl genrsa -out client_private.pem 2048
 openssl rsa -in client_private.pem -pubout -out client_public.pem
 ```
 > Note: `client_private.pem` (client private key) & `client_public.pem` (client public key)
-## Public Key Sharing
+## Share Public Keys
 - Before the encrypted chat can work, the public keys must be shared
 - The public keys were distributed separately from the messaging application via SCP prior to communication
 - > Note: Private keys are never shared. Only public keys are exchanged
@@ -49,8 +49,20 @@ sudo apt update
 sudo apt install libssl-dev
 ```
 
-## Build
-### Compiling Server
-- `gcc server.c -o server -lcrypto -lssl`
-### Compiling Client
-- `gcc client.c -o client -lcrypto -lssl`
+## Build the Executables
+### Building the Server
+```bash
+gcc server.c -o server -lcrypto -lssl
+```
+### Building the Client
+```bash
+gcc client.c -o client -lcrypto -lssl
+```
+
+## Run the Program
+### Start the Server
+```bash
+./server
+```
+### Configure Client IP
+- in `client.c` change line 
