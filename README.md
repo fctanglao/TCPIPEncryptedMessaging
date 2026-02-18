@@ -6,12 +6,13 @@ I wrote this program for a final assignment in my Introduction to Cybersecurity 
 ## Overview
 - The application establishes a TCP connection on port `8080` and encrypts messages at the application layer using RSA with OAEP padding
 - Each side generates its own RSA key pair and shares only its **public key** with the other party before communication begins
+- Public keys are shared so that a sender can encrypt messages using the recipient’s public key, ensuring that only the recipient (who possesses the corresponding private key) can decrypt and read the message
 ### Message Flow
 - Client -> Encrypt with server public key -> Send over TCP -> Server -> Decrypt with server private key  
 - Server -> Encrypt with client public key -> Send over TCP -> Client -> Decrypt with client private key  
 > Note: Typing **disconnect** closes the session
 
-## Key Generation & Public Key Sharing
+## Key Generation
 - Each side generates its own 2048-bit RSA key pair
 ### Generating Server Key Pair
 ```bash
@@ -25,14 +26,14 @@ openssl genrsa -out client_private.pem 2048
 openssl rsa -in client_private.pem -pubout -out client_public.pem
 ```
 > Note: `client_private.pem` (client private key) & `client_public.pem` (client public key)
-### Sharing Public Keys
+## Public Key Sharing
 - Before the encrypted chat can work, the public keys must be shared
 - The public keys were distributed separately from the messaging application via SCP prior to communication
-- The **server** gives the client `public.pem` (server public key used by the client to encrypt messages to the server)
+### Sharing Server Public Key
 ```bash
 scp user@server-ip:/path/to/public.pem /path/to/client/code/directory/
 ```
-- The **client** gives the server `client_public.pem` (client public key used by the server to encrypt replies to the client)
+### Sharing Client Public Key
 ```bash
 scp client_public.pem username@server_ip:/path/to/destination/directory/
 ```
