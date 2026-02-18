@@ -24,10 +24,10 @@ I wrote this program for a final assignment in my Introduction to Cybersecurity 
 - This project assumes keys are shared out-of-band. No certificate authority (CA) or TLS validation is used
 
 ### Server (run on server machine)
-```bash
+`
 openssl genpkey -algorithm RSA -pkeyopt rsa_keygen_bits:2048 -out private.pem
 openssl rsa -pubout -in private.pem -out public.pem
-```
+`
 
 
 ## Generate RSA Keys
