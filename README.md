@@ -73,3 +73,8 @@ inet_pton(AF_INET, "192.168.119.128", &serv_addr.sin_addr)
 ```bash
 ./client
 ```
+
+## Packet Analysis Using Wireshark
+- Wireshark was used to verify that transmitted messages are encrypted
+- ![Wireshark Capture](docs/wireshark_capture.png)
+
