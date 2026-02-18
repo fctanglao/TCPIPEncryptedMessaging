@@ -13,9 +13,9 @@ The application establishes a TCP connection on port `8080` and encrypts message
 - `client_private.pem` (client private key)
 - `client_public.pem` (client public key)
 ### Public Key Sharing
-Before the encrypted chat can work, the public keys must be shared
-#### The **server** gives the client `public.pem` (server public key used by the client to encrypt messages to the server)
-#### The **client** gives the server `client_public.pem` (client public key used by the server to encrypt replies to the client)
+Before the encrypted chat can work, the public keys must be shared<br/>
+The **server** gives the client `public.pem` (server public key used by the client to encrypt messages to the server)<br/>
+The **client** gives the server `client_public.pem` (client public key used by the server to encrypt replies to the client)
 > Note: This project assumes keys are shared out-of-band. No certificate authority (CA) or TLS validation is used
 ### Message Flow
 - Encrypt with server public key -> Decrypt with server private key
