@@ -87,7 +87,7 @@ gcc client.c -o client -lcrypto -lssl
 ```bash
 inet_pton(AF_INET, "192.168.119.128", &serv_addr.sin_addr)
 ```
-> Note: It is considered bad practice to publicly publish your IP address. DO NOT DO IT. These addresses are from VMs that have been decommissioned
+> Note: It is considered bad practice to publicly publish your IP address. **DO NOT DO IT**. These addresses are from VMs that have been decommissioned
 ### Run the Client
 ```bash
 ./client
