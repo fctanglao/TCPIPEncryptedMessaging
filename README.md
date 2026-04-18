@@ -49,6 +49,7 @@ openssl genrsa -out client_private.pem 2048
 openssl rsa -in client_private.pem -pubout -out client_public.pem
 ```
 > Note: `client_private.pem` (client private key) & `client_public.pem` (client public key)
+
 ## Share Public Keys
 - Before the encrypted chat can work, the public keys must be shared
 - The public keys were distributed separately from the messaging application via SCP prior to communication
@@ -86,6 +87,7 @@ gcc client.c -o client -lcrypto -lssl
 ```bash
 inet_pton(AF_INET, "192.168.119.128", &serv_addr.sin_addr)
 ```
+> Note: It is considered bad practice to publicly publish your IP address. These IP addresses are from VMs that have been decommissioned
 ### Run the Client
 ```bash
 ./client
